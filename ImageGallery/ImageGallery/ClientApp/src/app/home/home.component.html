@@ -1,0 +1,28 @@
+<div class="main">
+  <ul id="og-grid" class="og-grid">
+    <li [class.og-expanded]="!images[i].hide" (click)="expandImage(i)" *ngFor="let item of images;let i=index;" [@openClose]=!images[i].hide?true:false>
+      <a href="#">
+        <img [src]=images[i].thumbnail [alt]="item.name" />
+        <!--<a href="#" rel="noopener">{{item.name}}</a>-->
+      </a>
+      <div class="og-expander" [@childanimate]=!images[i].hide?true:false>
+        <div class="og-expander-inner" *ngIf="!images[i].hide">
+          <span class="og-close"></span>
+          <div class="og-fullimg">
+            <div class="og-loading" style="display: none;"></div>
+            <img [src]=images[i].thumbnail style="display: inline;">
+          </div>
+          <div class="og-details">
+            <h3>{{images[i].name}}</h3>
+            <p>{{images[i].description}}</p>
+            <a href="#">Visit website</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <p>
+      © MENERVA SOFTWARE 2018
+    </p>
+  </ul>
+
+</div>

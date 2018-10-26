@@ -1,0 +1,4 @@
+.animation {
+  transition: height 350ms ease 0s;
+  height: 760px;
+}
